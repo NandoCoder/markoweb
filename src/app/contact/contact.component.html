@@ -1,33 +1,45 @@
 <h3>Formulario de contacto</h3>
+<div>
+  <p>Rellena tus datos y nos pondremos en contacto contigo lo antes posible</p>
+</div>
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <div class="label">
+    <div>
       <label>
         Nombre:
-        <input type="text" formControlName="name">
+        <div class="input">
+          <input type="text" formControlName="name">
+        </div>
       </label>
     </div>
 
     <div>
       <label>
         Email:
-        <input type="email" formControlName="email">
+        <div class="input">
+          <input type="email" formControlName="email">
+        </div>
       </label>
     </div>
 
     <div>
       <label>
         Teléfono:
-        <input type="tel" formControlName="phone">
+        <div class="input">
+          <input type="tel" formControlName="phone">
+        </div>
       </label>
     </div>
 
     <div>    
       <label>
       Comentario:
-      <textarea formControlName="comment"></textarea>
-    </label></div>
+      <div class="input">
+        <textarea formControlName="comment"></textarea>
+      </div>
+      </label>
+    </div>
 
-    <div>
+    <div class="button">
       <button type="submit">Enviar</button>
     </div>
 
