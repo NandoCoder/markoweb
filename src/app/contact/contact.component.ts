@@ -23,6 +23,10 @@ export class ContactComponent {
   }
 
   onSubmit(){
+    this.formSubmitted = true
+
+    console.log(this.contactForm.value);
+    
     if(this.contactForm.valid){
       console.log('Formulario enviado')
     }else{

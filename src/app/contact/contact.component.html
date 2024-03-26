@@ -7,8 +7,13 @@
       <label>
         Nombre:
         <div class="input">
-          <input type="text" formControlName="name">
+          <input type="text" formControlName="name" placeholder="Nombre">
         </div>
+        @if (formSubmitted && contactForm.controls['name'].errors?.['required']) {
+          <div class="error">
+            <span>* El nombre es obligatorio</span>
+          </div>
+        }
       </label>
     </div>
 
@@ -16,8 +21,17 @@
       <label>
         Email:
         <div class="input">
-          <input type="email" formControlName="email">
+          <input type="email" formControlName="email" placeholder="ejemplo@ejemplo.com">
         </div>
+        @if (formSubmitted && (contactForm.controls['email'].errors?.['required'] || contactForm.controls['email'].errors?.['email'])) {
+          <div class="error">
+            @if (contactForm.controls['email'].errors?.['required']) {
+              <span>* El email es obligatorio</span>
+            } @else if (contactForm.controls['email'].errors?.['email']) {
+              <span>* Por favor, introduce un email válido</span>
+            }
+          </div>
+        }
       </label>
     </div>
 
@@ -25,8 +39,13 @@
       <label>
         Teléfono:
         <div class="input">
-          <input type="tel" formControlName="phone">
+          <input type="tel" formControlName="phone" placeholder="666121324">
         </div>
+        @if (formSubmitted && contactForm.controls['phone'].errors?.['required']) {
+          <div class="error">
+            <span>* El teléfono es obligatorio</span>
+          </div>
+        }
       </label>
     </div>
 
@@ -34,7 +53,7 @@
       <label>
       Comentario:
       <div class="input">
-        <textarea formControlName="comment"></textarea>
+        <textarea formControlName="comment" placeholder="Cuentame más sobre ti"></textarea>
       </div>
       </label>
     </div>

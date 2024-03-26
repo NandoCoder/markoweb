@@ -27,6 +27,13 @@ input {
     width: 20em;
     height: 2em;
 }
+div .error {
+    margin-bottom: .5em;
+}
+
+span { 
+    color: rgb(212, 0, 0);
+}
 
 textarea {
     width: 80em;
